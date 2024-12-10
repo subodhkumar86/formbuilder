@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const cors_1 = require("cors");
+const formRoutes_1 = require("./routes/formRoutes");
+const submissionRoutes_1 = require("./routes/submissionRoutes");
+const app = (0, express_1.default)();
+app.use((0, cors_1.default)());
+app.use(express_1.default.json());
+app.use("/api/forms", formRoutes_1.default);
+app.use("/api/submissions", submissionRoutes_1.default);
+exports.default = app;
